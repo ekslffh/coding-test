@@ -5,8 +5,10 @@ def sequential_search(n, target, array):
         # 현재의 원소가 찾고자 하는 원소와 동일한 경우
         if array[i] == target:
             return i + 1 # 현재의 위치 반환(인덱스는 0부터 시작하므로 1 더하기)
+    # 해당 원소가 존재하지 않는 경우 -1 반환
+    return -1
 
-print("생성할 원소 개수를 입력한 다음 한 칸 띄고 찾을 문자열을 입력하세요.")
+print("생성할 원소의 개수를 입력한 다음 한 칸 띄고 찾을 문자열을 입력하세요.")
 input_data = input().split()
 n = int(input_data[0]) # 원소의 개수
 target = input_data[1] # 찾고자 하는 문자열
