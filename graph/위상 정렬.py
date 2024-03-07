@@ -20,7 +20,7 @@ def topology_sort():
     q = deque() # 큐 기능을 위한 deque 라이브러리 사용
 
     # 처음 시작할 때는 진입차수가 0인 노드를 큐에 삽입
-    for i in range(1 , v + 1):
+    for i in range(1, v + 1):
         if indegree[i] == 0:
             q.append(i)
 
