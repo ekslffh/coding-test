@@ -8,7 +8,6 @@ for tc in range(int(input())):
     indegree = [0] * (n + 1)
     # 각 노드에 연결된 간선 정보를 담기 위한 인접 행렬 초기화
     graph = [[False] * (n + 1) for i in range(n + 1)]
-
     # 작년 순위 정보 입력
     data = list(map(int, input().split()))
     # 방향 그래프의 간선 정보 초기화
@@ -47,7 +46,7 @@ for tc in range(int(input())):
 
     # 정확히 노드의 개수만큼 반복
     for i in range(n):
-        # 큐가 비어있다면 사이클이 발생했다는 의미
+        # 큐가 비어 있다면 사이클이 발생했다는 의미
         if len(q) == 0:
             cycle = True
             break
