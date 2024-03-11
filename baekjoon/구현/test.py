@@ -1,4 +1,3 @@
-arr = [1,2,3]
-x, y,z = arr
+arr = [(1,x) for x in range(1, 10) if x % 2 == 0]
 
-print(x, z)
+print(arr)
