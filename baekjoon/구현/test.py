@@ -1,3 +1,5 @@
-arr = [(1,x) for x in range(1, 10) if x % 2 == 0]
+d = {}
 
-print(arr)
+d['a'] = 'apple'
+
+print(d)
