@@ -1,9 +1,9 @@
-q = ["hello and word and back and front"]
+n, m = 3, 4
 
-result = []
-for x in q:
-    data = list(x.split())
-    result.append([a for a in data if a != "and"])
+arr = [[[0, 1] for _ in range(m)] for _ in range(n)]
 
-print(result)
+print(arr)
 
+arr[0][0] = [3,4]
+
+print(arr)

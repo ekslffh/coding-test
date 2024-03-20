@@ -1,12 +1,8 @@
-from collections import deque
+def check(p1, p2):
+    print(p1)
+    print(p2)
 
-q = deque([1,2,3,4])
+a = (1, 3)
+b = (2, 4)
 
-while q:
-    print(q.popleft())
-
-a = [5,6,7,8]
-q = deque(a)
-
-print(q)
-print(q.popleft())
+check(a)
