@@ -1,8 +1,9 @@
-def check(p1, p2):
-    print(p1)
-    print(p2)
+from copy import copy
 
-a = (1, 3)
-b = (2, 4)
+a = [(0, 0) for _ in range(6)]
+print(a)
+b = copy(a)
+b[0] = (1, 9)
+print(b)
+print(b.count((0, 0)))
 
-check(a)
