@@ -49,6 +49,7 @@ def backtracking(depth, result, mal):
         for _ in range(dice[depth] - 1):
             x = graph[x][0]
 
+        # 종료지점을 같을 수 있기 때문에 종료지점이거나, 아니라면 해당 위치에 말이 없는지를 확인하여서 이동을 하였다.
         if x == 32 or (x < 32 and x not in temp_mal):
             # 다음 상황으로 재귀 보내기
             temp_mal[i] = x
