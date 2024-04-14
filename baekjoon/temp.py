@@ -1,9 +1,8 @@
-from copy import copy
+def solution(number):
+    answer = ''
+    for x in str(number):
+        answer += x + ','
+    answer = answer[0:-1]
+    print(answer)
 
-a = [(0, 0) for _ in range(6)]
-print(a)
-b = copy(a)
-b[0] = (1, 9)
-print(b)
-print(b.count((0, 0)))
-
+solution(98765432)
