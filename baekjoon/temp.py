@@ -1,8 +1,3 @@
-def solution(number):
-    answer = ''
-    for x in str(number):
-        answer += x + ','
-    answer = answer[0:-1]
-    print(answer)
+import math
 
-solution(98765432)
+print(math.ceil(3.1))
