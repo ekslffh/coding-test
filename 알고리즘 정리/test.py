@@ -1,24 +1,37 @@
-import sys
+# 크루스칼 알고리즘
+def find_parent(parent, x):
+    if parent[x] != x:
+        parent[x] = find_parent(parent, parent[x])
+    return parent[x]
 
-data = input()
-idx = 0
-result = ''
-while idx < len(data):
-    cur_idx = idx
-    cur_val = data[cur_idx]
-    cnt = 0
-    while idx < len(data) and cur_val == data[idx]:
-        idx += 1
-        cnt += 1
-    if cur_val == '.':
-        result += '.' * cnt
+def union_parent(parent, a, b):
+    a = find_parent(parent, a)
+    b = find_parent(parent, b)
+    if a < b:
+        parent[b] = a
     else:
-        if cnt % 2 == 1:
-            print(-1)
-            sys.exit()
-        else:
-            a_num = cnt // 4
-            b_num = (cnt % 4) // 2
-            result += 'AAAA' * a_num + 'BB' * b_num
+        parent[a] = b
+
+v, e = map(int, input().split())
+parent = [0] * (v + 1)
+
+edges = []
+result = 0
+
+# 부모를 자기 자신으로 초기화
+for i in range(1, v + 1):
+    parent[i] = i
+
+for _ in range(e):
+    a, b, cost = map(int, input().split())
+    edges.append((cost, a, b))
+
+edges.sort()
+
+for edge in edges:
+    cost, a, b = edge
+    if find_parent(parent, a) != find_parent(parent, b):
+        union_parent(parent, a, b)
+        result += cost
 
 print(result)
